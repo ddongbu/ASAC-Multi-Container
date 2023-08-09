@@ -1,0 +1,29 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: inhatc
+      MYSQL_DATABASE: asac
+    ports:
+      - "8081:8080"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  spring-boot-app:
+    build: ~/Desktop/asac
+    ports:
+      - "3305:3306"
+    depends_on:
+      - mysql
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/asac?useSSL=false
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: inhatc
+
+networks:
+  default:
+    driver: bridge
+
+volumes:
+  mysql_data:
