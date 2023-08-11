@@ -38,7 +38,7 @@ public class BasicController {
         return ResponseEntity.ok(user);
     }
 
-    //값 수정
+    //비밀번호 값 수정
     @PutMapping("/user/{username}")
     public ResponseEntity<?> update(@PathVariable String username, @RequestBody HashMap<String,String> map){
         UserVO user =userService.update(username,map.get("password"));

@@ -5,7 +5,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-
+//@Data
+//Getter , Setter 한번에 해주는건데 어노테이션이 안먹었다.
 @Entity
 public class UserVO {
     @Id
