@@ -4,8 +4,8 @@ services:
     image: mysql:latest
     container_name: user_db
     environment:
-     - MYSQL_ROOT_PASSWORD=inhatc
-     - MYSQL_DATABASE=asac
+     - MYSQL_ROOT_PASSWORD={password}
+     - MYSQL_DATABASE={Database}
     ports:
       - "3308:3306"
     volumes:
@@ -22,8 +22,8 @@ services:
       - mysql
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/asac?useSSL=false&allowPublicKeyRetrieval=true&useUnicode=true&serverTimezone=Asia/Seoul
-      - SPRING_DATASOURCE_USERNAME=root
-      - SPRING_DATASOURCE_PASSWORD=inhatc
+      - SPRING_DATASOURCE_USERNAME={username}
+      - SPRING_DATASOURCE_PASSWORD={password}
     networks:
       springboot-mysql-net:
 
