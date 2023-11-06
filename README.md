@@ -7,7 +7,7 @@
 ## docker 프로젝트 이름의 이미지를 만든상태
 
 - Maven → spring-boot:build-image build.
-- dockerfile의 명령어 처리말고 maven 으로 처리하였음.
+
 - docker build . 효과
 
 → docker run -d --name docker-containers -p 8081:8080 docker:0.0.1-SNAPSHOT
